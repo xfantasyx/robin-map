@@ -51,10 +51,10 @@ if(NOT IS_SUBPROJECT)
     ## Create and install tsl-robin-mapConfig.cmake
     configure_package_config_file("${CMAKE_CURRENT_SOURCE_DIR}/cmake/tsl-robin-mapConfig.cmake.in"
                                   "${CMAKE_CURRENT_BINARY_DIR}/tsl-robin-mapConfig.cmake"
-                                  INSTALL_DESTINATION "${CMAKE_INSTALL_DATAROOTDIR}/cmake/tsl-robin-map")
+                                  INSTALL_DESTINATION "cmake")
 
     install(FILES "${CMAKE_CURRENT_BINARY_DIR}/tsl-robin-mapConfig.cmake"
-            DESTINATION "${CMAKE_INSTALL_DATAROOTDIR}/cmake/tsl-robin-map")
+            DESTINATION "cmake")
 
 
     ## Create local tsl-robin-mapTargets.cmake
@@ -66,7 +66,7 @@ if(NOT IS_SUBPROJECT)
 
     install(EXPORT tsl-robin-mapTargets
             NAMESPACE tsl::
-            DESTINATION "${CMAKE_INSTALL_DATAROOTDIR}/cmake/tsl-robin-map")
+            DESTINATION "cmake")
 
 
 
@@ -82,5 +82,5 @@ if(NOT IS_SUBPROJECT)
     set(CMAKE_SIZEOF_VOID_P ${CMAKE_SIZEOF_VOID_P_BACKUP})
 
     install(FILES "${CMAKE_CURRENT_BINARY_DIR}/tsl-robin-mapConfigVersion.cmake"
-            DESTINATION "${CMAKE_INSTALL_DATAROOTDIR}/cmake/tsl-robin-map")
+            DESTINATION "cmake")
 endif()
